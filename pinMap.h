@@ -10,22 +10,22 @@
 
 #pragma once
 
-#define CAN_RX 8
+#define CAN_RX 17
 #define CAN_TX 18
 
-#define USER_INPUT_A1 17
-#define USER_INPUT_A2 9
+#define USER_INPUT_A1 19
+#define USER_INPUT_A2 20
 
 #define USER_INPUT_D1 48
 #define USER_INPUT_D2 47
 
-#define R24 5
+#define R24 46
 #define R25 4
-#define R26 2
+#define R26 3
 #define R27 1
 
 #define LED_1 21
-#define LED_2 14
+#define LED_2 12
 
 
 void setupPinMode() {

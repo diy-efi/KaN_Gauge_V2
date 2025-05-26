@@ -19,7 +19,7 @@
 #include "config.h"
 #include "nvs.h"
 
-#define LED_PIN 14
+#define LED_PIN 15
 #define LED_PIN2 21
 #define LED_COUNT 3
 

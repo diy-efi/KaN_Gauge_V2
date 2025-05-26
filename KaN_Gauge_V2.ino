@@ -28,6 +28,7 @@
 #include "driver/twai.h"
 #include <Arduino.h>
 #include <Wire.h>
+#include <CST816S.h>
 
 #include "wifi.h"
 #include "display.h"
@@ -41,6 +42,8 @@
 #include "gauge.h"
 #include "can.h"
 
+
+CST816S touch(6, 7, 13, 5);	// sda, scl, rst, irq
 
 int loopTimer_ms = 0;
 int loopStart_ms = 0;
@@ -282,6 +285,19 @@ void setup() {
 
   displayInit();
   setDisplayBrightness(dispBrightness);
+  
+  touch.begin();
+
+  Serial.print(touch.data.version);
+  Serial.print("\t");
+  Serial.print(touch.data.versionInfo[0]);
+  Serial.print("-");
+  Serial.print(touch.data.versionInfo[1]);
+  Serial.print("-");
+  Serial.println(touch.data.versionInfo[2]);
+
+  touch.attachUserInterrupt(inputButtonD1_ISR);
+
   checkButtonStartup();
   
   hardwareConfig = checkResistorConfig();
@@ -366,8 +382,6 @@ void setup() {
   setupCLI();
 #endif
 
-
-  attachInterrupt(USER_INPUT_D2, inputButtonD1_ISR, FALLING);
   setupInputTask();
 
 

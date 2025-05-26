@@ -28,7 +28,7 @@
 #include "nvs.h"
 #include "icons/alert.h"
 
-#define TFT_BL 6 // LED back-light
+#define TFT_BL 2 // LED back-light
 #define PWM1_Ch 0
 #define PWM1_Res 8
 #define PWM1_Freq 1000

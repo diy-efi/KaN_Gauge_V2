@@ -1323,7 +1323,7 @@ void saveBootConfig() {
 void restoreBootConfig() {
 
   preferences.begin("boot", false);
-  bootLogo1 = preferences.getUInt("bootLogo1", BMM);
+  bootLogo1 = preferences.getUInt("bootLogo1", CUSTOM);
   bootLogo2 = preferences.getUInt("bootLogo2", FOME);
   bootLogo3 = preferences.getUInt("bootLogo3", KAN);
   quickstart = preferences.getUInt("quickstart", 0);
